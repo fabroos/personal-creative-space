@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 5rem);
+  }
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+}

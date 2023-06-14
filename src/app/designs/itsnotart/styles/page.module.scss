@@ -1,0 +1,237 @@
+$bg-color: #0a0a0a;
+$font-color: #fff;
+$accent-color: #ffdc61;
+$aligner-size: max(200px, 20vw);
+$full-vh: calc(var(--vh, 1vh) * 100);
+
+.page {
+  min-height: 100vh;
+
+  &__section {
+    height: $full-vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    // Header 🔼
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      height: $aligner-size;
+      padding: 2rem;
+
+      &__logo {
+        display: flex;
+        height: 80px;
+        width: 100px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+          fill: #fff;
+        }
+      }
+
+      &__collections {
+        display: flex;
+        flex-shrink: 0;
+        flex-grow: 1;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        &__container {
+          display: flex;
+          gap: 16px;
+        }
+
+        &_image {
+          flex: 1;
+          height: 100%;
+          width: 100%;
+          aspect-ratio: 1/1;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &_list {
+          display: none;
+          flex-direction: column;
+
+          @media screen and (min-width: 768px) {
+            display: flex;
+          }
+
+          &_title {
+            font-size: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            background-color: $font-color;
+            color: $bg-color;
+            padding: 8px 16px;
+            margin-bottom: 16px;
+          }
+
+          &_item {
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            border: 1px solid $font-color;
+            padding: 8px 16px;
+
+            &:hover {
+              background-color: $font-color;
+              color: $bg-color;
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      width: 100%;
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__title {
+      line-height: 1;
+      white-space: nowrap;
+      font-size: max(28px, 9.5vw);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &__branding {
+      display: flex;
+      gap: 32px;
+      justify-content: flex-end;
+      margin-right: max(4px, 1.8vw);
+
+      &_item {
+        font-size: clamp(12px, 3vw, 24px);
+      }
+    }
+
+    &__decoration {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: calc(var(--vw, 1vh) * 50);
+      height: calc(var(--vw, 1vh) * 50);
+      pointer-events: none;
+      aspect-ratio: 1/1;
+      min-width: 250px;
+      min-height: 250px;
+      line-height: 1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__footer {
+      padding: 0 2rem;
+      height: $aligner-size;
+      display: flex;
+      flex-direction: column;
+      text-align: justify;
+      gap: 32px;
+      font-size: max(10px, 1.5vh);
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 2rem;
+
+        &__item {
+          text-transform: uppercase;
+          flex: 1;
+
+          &_title {
+            font-size: 20px;
+            white-space: nowrap;
+          }
+
+          &_text {
+            font-size: 12px;
+          }
+
+          &:last-child {
+            text-align: end;
+          }
+        }
+      }
+    }
+  }
+
+  &__section_2 {
+    min-height: $full-vh;
+
+    &__head {
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:is(:first-child, :last-child) {
+        width: 100%;
+        height: 100%;
+      }
+
+      &__title {
+        &_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+        }
+
+        line-height: 1.1;
+        display: inline-block;
+        margin: auto;
+        font-size: clamp(24px, 5vw, 64px);
+        border-bottom: $font-color 1px solid;
+      }
+
+      &__text {
+        font-size: clamp(12px, 1.5vw, 18px);
+        max-width: 45ch;
+        text-align: center;
+        line-height: 1.2;
+      }
+    }
+
+    &__content {
+      display: flex;
+      padding-left: clamp(64px, 15vw, 200px);
+
+      &__slider {
+        width: 100%;
+
+        &__card {
+          border: $font-color 1px solid;
+        }
+      }
+    }
+  }
+}

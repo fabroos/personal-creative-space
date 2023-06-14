@@ -1,0 +1,57 @@
+.container {
+  svg {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    pointer-events: none;
+  }
+}
+
+.h-screen {
+  height: 100vh;
+  background: linear-gradient(180deg, #000 0%, #326fb8 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clip-path {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.h1 {
+  font-size: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  // hide in the clip-path
+  mix-blend-mode: screen;
+  transform: translateY(200%);
+}
+
+.h2 {
+  font-size: 10rem;
+  color: #fff;
+  // cursive letter
+  font-family: Lobster, cursive;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  // hide in the clip-path
+  transform: translateY(100%);
+}
